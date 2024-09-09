@@ -41,75 +41,205 @@
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 18</h1><div><section id="description">
-      <p>When the user inputs their daily calorie budget, the input field will only accept numerical values. However, if a number is entered with a <code>+</code> or <code>-</code> sign, you'll need to remove those characters.</p>
-      <p>Start by declaring a <code>cleanInputString</code> function that takes a <code>str</code> parameter.</p>
-      <p><em>NOTE</em>: Values from an HTML <code>input</code> field are received as strings in JavaScript. You'll need to convert these strings into numbers before performing any calculations. Converting string values into numbers will be covered in a future step.</p>
-      </section></div>
+      <h1 id="content-start">Step 18</h1>
+      <div>
+        <section id="description">
+          <p>When the user inputs their daily calorie budget, the input field will only accept numerical values. However, if a number is entered with a <code>+</code> or <code>-</code> sign, you'll need to remove those characters.</p>
+          <p>Start by declaring a <code>cleanInputString</code> function that takes a <code>str</code> parameter.</p>
+          <p><em>NOTE</em>: Values from an HTML <code>input</code> field are received as strings in JavaScript. You'll need to convert these strings into numbers before performing any calculations. Converting string values into numbers will be covered in a future step.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 19</h1><div><section id="description">
-      <p>To match specific characters in a string, you can use Regular Expressions or "regex" for short.</p>
-      <p>Regex in JavaScript is indicated by a pattern wrapped in forward slashes. The following example will match the string literal <code>"hello"</code>:</p>
-      <details class="code-details" open=""><summary class="code-details-summary">Example Code</summary><pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">hello</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
-      </code></pre></details>
-      <p>Declare a <code>regex</code> variable and assign it the value from the example above. In future steps, you will update this regex pattern to match specific characters needed for the calorie counter.</p>
-      </section></div>
+      <h1 id="content-start">Step 19</h1>
+      <div>
+        <section id="description">
+          <p>To match specific characters in a string, you can use Regular Expressions or "regex" for short.</p>
+          <p>Regex in JavaScript is indicated by a pattern wrapped in forward slashes. The following example will match the string literal <code>"hello"</code>:</p>
+      
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">hello</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span></code></pre>
+          </details>
+
+          <p>Declare a <code>regex</code> variable and assign it the value from the example above. In future steps, you will update this regex pattern to match specific characters needed for the calorie counter.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 20</h1><div><section id="description">
-      <p>The current pattern will match the exact text <code>"hello"</code>, which is not the desired behavior. Instead, you want to search for <code>+</code>, <code>-</code>, or spaces. Replace the pattern in your <code>regex</code> variable with <code>\+-</code> to match plus and minus characters.</p>
-      <p>Note that you need to use the <code>backslash</code> <code>\</code> character to <dfn>escape</dfn> the <code>+</code> symbol because it has a special meaning in regular expressions.</p>
-      </section></div>
+      <h1 id="content-start">Step 20</h1>
+      <div>
+        <section id="description">
+          <p>The current pattern will match the exact text <code>"hello"</code>, which is not the desired behavior. Instead, you want to search for <code>+</code>, <code>-</code>, or spaces. Replace the pattern in your <code>regex</code> variable with <code>\+-</code> to match plus and minus characters.</p>
+          <p>Note that you need to use the <code>backslash</code> <code>\</code> character to <dfn>escape</dfn> the <code>+</code> symbol because it has a special meaning in regular expressions.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 21</h1><div><section id="description">
-      <p>In regex, shorthand character classes allow you to match specific characters without having to write those characters in your pattern. Shorthand character classes are preceded with a backslash (<code>\</code>). The character class <code>\s</code> will match any whitespace character. Add this to your regex pattern.</p>
-      </section></div>
+      <h1 id="content-start">Step 21</h1>
+      <div>
+        <section id="description">
+          <p>In regex, shorthand character classes allow you to match specific characters without having to write those characters in your pattern. Shorthand character classes are preceded with a backslash (<code>\</code>). The character class <code>\s</code> will match any whitespace character. Add this to your regex pattern.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 22</h1><div><section id="description">
-      <p>Your current pattern won't work just yet. <code>/+-\s/</code> looks for <code>+</code>, <code>-</code>, and a space <em>in order</em>. This would match <code>+- hello</code> but would not match <code>+hello</code>.</p>
-      <p>To tell the pattern to match each of these characters individually, you need to turn them into a character class. This is done by wrapping the characters you want to match in brackets. For example, this pattern will match the characters <code>h</code>, <code>e</code>, <code>l</code>, or <code>o</code>:</p>
-      <details class="code-details" open=""><summary class="code-details-summary">Example Code</summary><pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[helo]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
-      </code></pre></details>
-      <p>Turn your <code>+-\s</code> pattern into a character class. Note that you no longer need to escape the <code>+</code> character, because you are using a character class.</p>
-      </section></div>
+      <h1 id="content-start">Step 22</h1>
+      <div>
+        <section id="description">
+          <p>Your current pattern won't work just yet. <code>/+-\s/</code> looks for <code>+</code>, <code>-</code>, and a space <em>in order</em>. This would match <code>+- hello</code> but would not match <code>+hello</code>.</p>
+          <p>To tell the pattern to match each of these characters individually, you need to turn them into a character class. This is done by wrapping the characters you want to match in brackets. For example, this pattern will match the characters <code>h</code>, <code>e</code>, <code>l</code>, or <code>o</code>:</p>
+      
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[helo]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span></code></pre>
+          </details>
+
+          <p>Turn your <code>+-\s</code> pattern into a character class. Note that you no longer need to escape the <code>+</code> character, because you are using a character class.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 22</h1><div><section id="description">
-      <p>Your current pattern won't work just yet. <code>/+-\s/</code> looks for <code>+</code>, <code>-</code>, and a space <em>in order</em>. This would match <code>+- hello</code> but would not match <code>+hello</code>.</p>
-      <p>To tell the pattern to match each of these characters individually, you need to turn them into a character class. This is done by wrapping the characters you want to match in brackets. For example, this pattern will match the characters <code>h</code>, <code>e</code>, <code>l</code>, or <code>o</code>:</p>
-      <details class="code-details" open=""><summary class="code-details-summary">Example Code</summary><pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[helo]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
-      </code></pre></details>
-      <p>Turn your <code>+-\s</code> pattern into a character class. Note that you no longer need to escape the <code>+</code> character, because you are using a character class.</p>
-      </section></div>
+      <h1 id="content-start">Step 24</h1>
+      <div>
+        <section id="description">
+          <p>JavaScript provides a <code>.replace()</code> method that enables you to replace characters in a string with another string. This method accepts two arguments. The first argument is the character sequence to be replaced, which can be either a string or a regex pattern. The second argument is the string that replaces the matched sequence.</p>
+          <p>Since strings are immutable, the <code>replace</code> method returns a new string with the replaced characters.</p>
+          <p>In this example, the <code>replace</code> method is used to replace all instances of the letter <code>l</code> with the number <code>1</code> in the string <code>hello</code>.</p>
+      
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token string">"hello"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">l</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </details>
+      
+          <p>Use your <code>regex</code> to replace all instances of <code>+</code>, <code>-</code>, and a space in <code>str</code> with an empty string. Return this value.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 24</h1><div><section id="description">
-      <p>JavaScript provides a <code>.replace()</code> method that enables you to replace characters in a string with another string. This method accepts two arguments. The first argument is the character sequence to be replaced, which can be either a string or a regex pattern. The second argument is the string that replaces the matched sequence.</p>
-      <p>Since strings are immutable, the <code>replace</code> method returns a new string with the replaced characters.</p>
-      <p>In this example, the <code>replace</code> method is used to replace all instances of the letter <code>l</code> with the number <code>1</code> in the string <code>hello</code>.</p>
-      <details class="code-details" open=""><summary class="code-details-summary">Example Code</summary><pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token string">"hello"</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">l</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      </code></pre></details>
-      <p>Use your <code>regex</code> to replace all instances of <code>+</code>, <code>-</code>, and a space in <code>str</code> with an empty string. Return this value.</p>
-      </section></div>
+      <h1 id="content-start">Step 30</h1>
+      <div>
+        <section id="description">
+          <p>The <code>e</code> in a number input can also be an uppercase <code>E</code>. Regex has a flag for this, however – the <code>i</code> flag, which stands for "insensitive".</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">Hello</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span></code></pre>
+          </details>
+
+          <p>The following regex would match <code>hello</code>, <code>Hello</code>, <code>HELLO</code>, and even <code>hElLo</code> because of the <code>i</code> flag. This flag makes your pattern case-insensitive.</p>
+          <p>Add the <code>i</code> flag to your regex pattern.</p>
+        </section>
+      </div>
     </div>
 
     <div class="description-container">
-      <h1 id="content-start">Step 30</h1><div><section id="description">
-      <p>The <code>e</code> in a number input can also be an uppercase <code>E</code>. Regex has a flag for this, however – the <code>i</code> flag, which stands for "insensitive".</p>
-      <details class="code-details" open=""><summary class="code-details-summary">Example Code</summary><pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">Hello</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span>
-      </code></pre></details>
-      <p>The following regex would match <code>hello</code>, <code>Hello</code>, <code>HELLO</code>, and even <code>hElLo</code> because of the <code>i</code> flag. This flag makes your pattern case-insensitive.</p>
-      <p>Add the <code>i</code> flag to your regex pattern.</p>
-      </section></div>
+      <h1 id="content-start">Step 31</h1>
+      <div>
+        <section id="description">
+          <p>Number inputs only allow the <code>e</code> to occur between two digits. To match any number, you can use the character class <code>[0-9]</code>. This will match any digit between <code>0</code> and <code>9</code>.</p>
+          <p>Add this character class before and after <code>e</code> in your pattern.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 32</h1>
+      <div>
+        <section id="description">
+          <p>The <code>+</code> modifier in a regex allows you to match a pattern that occurs one or more times. To match your digit pattern one or more times, add a plus after each of the digit character classes. For example: <code>[0-9]+</code>.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 33</h1>
+      <div>
+        <section id="description">
+          <p>There is a shorthand character class to match any digit: <code>\d</code>. Replace your <code>[0-9]</code> character classes with this shorthand.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 34</h1>
+      <div>
+        <section id="description">
+          <p>Strings have a <dfn>.match()</dfn> method, which takes a regex argument. <code>.match()</code> will return an array of match results – containing either the first match, or all matches if the global flag is used.</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'example string'</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">example</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> result <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns ['example']</span></code></pre>
+          </details>
+          <p>Return the result of calling the <code>.match()</code> method on <code>str</code> and passing your <code>regex</code> variable as the argument. You'll use this match result later on.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 35</h1>
+      <div>
+        <section id="description">
+          <p>Now it is time to test your <code>isInvalidInput</code> function. For this test, you want to check if the function can detect scientific notation like <code>1e3</code> or <code>10e2</code>. While this is a valid way to represent numbers, it is not a valid input for your calorie counter project.</p>
+          <p>Below your <code>isInvalidInput</code> function, add a console statement. Inside that console statement, call the <code>isInvalidInput</code> function with an argument of <code>"1e3"</code>.</p>
+          <p>Open up the console to see the result. In the next step, you will learn more about what that result means.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 36</h1>
+      <div>
+        <section id="description">
+          <p>When you open the console, you should see this result:</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token punctuation">[</span> <span class="token string">'1e3'</span><span class="token punctuation">,</span> <span class="token literal-property property">index</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">'1e3'</span><span class="token punctuation">,</span> <span class="token literal-property property">groups</span><span class="token operator">:</span> <span class="token keyword">undefined</span> <span class="token punctuation">]</span></code></pre>
+          </details>
+
+          <p>The <code>match</code> method returns an array with any matches found in the string.</p>
+          <p>Here is a complete breakdown of that information:</p>
+          <ul>
+            <li><code>"1e3"</code> is the matched value against the <code>/\d+e\d+/i</code> regex.</li>
+            <li><code>index: 0</code> is the index of the matched value in the string.</li>
+            <li><code>input: '1e3'</code> is the original string that was matched.</li>
+            <li><code>groups: undefined</code> are the matched groups, which are not used in this case. You will learn more about groups in a later project.</li>
+          </ul>
+          <p>Now it is time to test for a valid input. Update your console statement to the following: <code>console.log(isInvalidInput("10"))</code>.</p>
+          <p>Open up the console to see the result. You will learn more about what this result means in the next step.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 37</h1>
+      <div>
+        <section id="description">
+          <p>When you open the console, you should see the result of <code>null</code>. The <code>match</code> method returns <code>null</code> when no match is found. In this case, the <code>isInvalidInput</code> function should return <code>null</code> when the input is a valid number without any scientific notation.</p>
+          <p><mark><code>null</code> in JavaScript is a special primitive that represents the intentional absence of a value. In a boolean context, <code>null</code> is considered falsy which evaluates to <code>false</code> in a conditional statement.</mark></p>
+          <p>Now that you have finished testing your <code>isInvalidInput</code> function, you can remove the <code>console.log</code> statement.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 39</h1>
+      <div>
+        <section id="description">
+          <p>You'll need to know which category the entry goes in. Thankfully, you added a dropdown for the user to select a category.</p>
+          <p>Remember that you queried that dropdown earlier in your JavaScript and assigned it to the <code>entryDropdown</code> button. You can use the <dfn>value</dfn> property to get the value of the selected option.</p>
+          <p>Use concatenation to add a <code>#</code> to the beginning of the <code>value</code> property of <code>entryDropdown</code>, and assign that result to a <code>targetId</code> variable.</p>
+        </section>
+      </div>
     </div>
   </body>
 </html>
