@@ -241,5 +241,46 @@
         </section>
       </div>
     </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 41</h1>
+      <div>
+        <section id="description">
+          <p>JavaScript has a feature called <dfn>template literals</dfn>, which allow you to interpolate variables directly within a string. Template literals are denoted with backticks <code>``</code>, as opposed to single or double quotes. Variables can be passed in to a template literal by surrounding the variable with <code>${}</code> – the value of the variable will be inserted into the string.</p>
+          <p>For example:</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"Naomi"</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> templateLiteral <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">~!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>templateLiteral<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </details>
+
+          <p>The console will show the string "Hello, my name is Naomi~!".</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 43</h1>
+      <div>
+        <section id="description">
+          <p>You will want to number the entries a user adds. To get all of the number inputs, you can use the <dfn>querySelectorAll()</dfn> method.</p>
+          <p>The <code>querySelectorAll()</code> method returns a <code>NodeList</code> of all the elements that match the selector. A <code>NodeList</code> is an array-like object, so you can access the elements using bracket notation.</p>
+          <p>Declare an <code>entryNumber</code> variable and give it the value of <code>targetInputContainer.querySelectorAll()</code>. You do not need to pass an argument to the query selector yet.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 44</h1>
+      <div>
+        <section id="description">
+          <p>Each entry will have a text input for the entry's name, and a number input for the calories. To get a count of the number of entries, you can query by text inputs. Note that you cannot query by number inputs, as you have an extra number input for the user's calorie budget.</p>
+          <p>Pass the string <code>input[type="text"]</code> to the <code>querySelectorAll()</code> method. Remember that you will need to use single quotes for your string, so that you can use double quotes within.</p>
+          <p>This will return a <code>NodeList</code> of all the text inputs in the form. You can then access the <code>length</code> property of the <code>NodeList</code> to get the number of entries. Do this on the same line.</p>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
