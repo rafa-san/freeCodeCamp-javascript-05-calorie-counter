@@ -282,5 +282,118 @@
         </section>
       </div>
     </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 51</h1>
+      <div>
+        <section id="description">
+          <p>To see your new HTML content for the <code>targetInputContainer</code>, you will need to use the <dfn>innerHTML</dfn> property.</p>
+          <p>The <code>innerHTML</code> property sets or returns the HTML content inside an element.</p>
+          <p>Here is a <code>form</code> element with a <code>label</code> and <code>input</code> element nested inside.</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-html" tabindex="0" role="region" aria-label="HTML code example"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first-name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>First name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first-name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </details>
+
+          <p>If you want to add another <code>label</code> and <code>input</code> element inside the form, then you can use the <code>innerHTML</code> property as shown below:</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> formElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"form"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> formContent <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+              &nbsp;&nbsp;&lt;label for="last-name"&gt;Last name&lt;/label&gt;
+              &nbsp;&nbsp;&lt;input id="last-name" type="text"&gt;
+            </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+            formElement<span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> formContent<span class="token punctuation">;</span></code></pre>
+          </details>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 52</h1>
+      <div>
+        <section id="description">
+          <p>In the Role Playing Game project, you learned how to set a button's behavior by editing its <code>onclick</code> property. You can also edit an element's behavior by adding an event listener.</p>
+          <p>The following example uses the <code>addEventListener</code> method to add a click event to a button. When the button is clicked, the <code>printName</code> function is called.</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-html" tabindex="0" role="region" aria-label="HTML code example"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Print name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </details>
+
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">function</span> <span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            &nbsp;&nbsp;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Jessica"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> printName<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </details>
+
+          <p>The <code>addEventListener</code> method takes two arguments. The first is the event to listen to. (Ex. <code>'click'</code>) The second is the callback function, or the function that runs when the event is triggered.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 55</h1>
+      <div>
+        <section id="description">
+          <p>The <code>insertAdjacentHtml</code> method takes two arguments. The first argument is a string that specifies the position of the inserted element. The second argument is a string containing the HTML to be inserted.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 58</h1>
+      <div>
+        <section id="description">
+          <p>The <code>list</code> parameter is going to be the result of a query selector, which will return a <code>NodeList</code>. A <code>NodeList</code> is a list of elements like an array. It contains the elements that match the query selector. You will need to loop through these elements in the list.</p>
+          <p>In previous steps, you learned how to loop through an array using a <code>for</code> loop. You can also use a <dfn>for...of</dfn> loop to loop through an array and a <code>NodeList</code>.</p>
+          <p>A <code>for...of</code> loop is used to iterate over elements in an iterable object like an array. The variable declared in the loop represents the current element being iterated over.</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> element <span class="token keyword">of</span> elementArray<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            &nbsp;&nbsp;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span></code></pre>
+          </details>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 67</h1>
+      <div>
+        <section id="description">
+          <p>Now it's time to start putting it all together. Declare an empty <code>calculateCalories</code> function, which takes a parameter named <code>e</code>. This function will be another event listener, so the first argument passed will be the browser event – <code>e</code> is a common name for this parameter.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 68</h1>
+      <div>
+        <section id="description">
+          <p>You will be attaching this function to the <code>submit</code> event of the form. The <code>submit</code> event is triggered when the form is submitted. The default action of the <code>submit</code> event is to reload the page. You need to prevent this default action using the <code>preventDefault()</code> method of your <code>e</code> parameter.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 75</h1>
+      <div>
+        <section id="description">
+          <p>You also need to get the value of your <code>#budget</code> input. You already queried this at the top of your code, and set it to the <code>budgetNumberInput</code> variable. However, you used <code>getElementById</code>, which returns an <code>Element</code>, not a <code>NodeList</code>.</p>
+          <p>A <code>NodeList</code> is an array-like object, which means you can iterate through it and it shares some common methods with an array. For your <code>getCaloriesFromInputs</code> function, an array will work for the argument just as well as a <code>NodeList</code> does.</p>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
