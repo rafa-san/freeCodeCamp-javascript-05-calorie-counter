@@ -395,5 +395,55 @@
         </section>
       </div>
     </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 87</h1>
+      <div>
+        <section id="description">
+          <p>Finally, you need to make the <code>#output</code> element visible so the user can see your text. Your <code>output</code> variable is an Element, which has a <code>classList</code> property. This property has a <code>.remove()</code> method, which accepts a string representing the class to remove from the element.</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> paragraphElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'paragraph'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            paragraphElement<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </details>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 91</h1>
+      <div>
+        <section id="description">
+          <p>Remember that <code>document.querySelectorAll</code> returns a <code>NodeList</code>, which is array-like but is not an array. However, the <code>Array</code> object has a <code>.from()</code> method that accepts an array-like and returns an array. This is helpful when you want access to more robust array methods, which you will learn about in a future project.</p>
+          <p>The following example takes a <code>NodeList</code> of <code>li</code> elements and converts it to an array of <code>li</code> elements:</p>
+          
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-html" tabindex="0" role="region" aria-label="HTML code example"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre>
+          </details>
+
+          <details class="code-details" open="">
+            <summary class="code-details-summary">Example Code</summary>
+            <pre class="language-js" tabindex="0" role="region" aria-label="JavaScript code example"><code class="language-js"><span class="token keyword">const</span> listItemsArray <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>listItemsArray<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Output: (3) [li, li, li]</span></code></pre>
+          </details>
+        </section>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <h1 id="content-start">Step 94</h1>
+      <div>
+        <section id="description">
+          <p>You also need to clear the <code>output</code> element's text. You can do this by setting the <code>innerText</code> property to an empty string.</p>
+          <p>The difference between <code>innerText</code> and <code>innerHTML</code> is that <code>innerText</code> will not render HTML elements, but will display the tags and content as raw text.</p>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
