@@ -12,10 +12,10 @@
 }
 
 body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 18px;
   background-color: var(--fcc-blue);
   color: var(--light-grey);
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
 }
 
 h1 {
@@ -44,17 +44,17 @@ legend {
 }
 
 button {
-  cursor: pointer;
-  text-decoration: none;
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-yellow);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 button,
 input,
 select {
-  min-height: 24px;
   color: var(--dark-blue);
+  min-height: 24px;
 }
 
 fieldset,
@@ -89,7 +89,7 @@ select {
 }
 
 
-/* TUTORIAL */
+/* TUTORIAL BUTTON */
 .tutorial {
   margin: 30px auto 0px;
   max-width: 500px;
